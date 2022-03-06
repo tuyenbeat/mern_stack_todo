@@ -1,0 +1,48 @@
+.notfound-page {
+    background: linear-gradient(93.56deg, #9CECFB 2.77%, rgba(101, 199, 247, 0.75) 48.96%, rgba(0, 82, 212, 0.5) 97.12%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+justify-content: center;
+    .page-right {
+        width: 40%;
+        height: 80%;
+    }
+    .page-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 55%;
+        .page-logo {
+            height: 250px;
+            width: 847px;
+        }
+        h3 {
+            font-family: Rubik Mono One;
+            font-size: 75px;
+            line-height: 105px;
+            padding: 20px 0px;
+        }
+        h5 {
+        font-size: 30px;
+        line-height: 38px; 
+            padding-bottom: 40px;
+        }
+        h4 {
+            font-family: Rubik Mono One;
+            font-size: 35px;
+            line-height: 43px;
+            color: #F1F5FF;
+            padding: 15px 30px;
+        }
+        button {
+            background: #6191FF;
+            border-radius: 23px;
+            transition: all 0.2s ease-out ;
+        }
+        button:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@import "variables";
+.login-page {
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(167, 112, 239, 0.5) 0%, rgba(238, 205, 163, 0.5) 0.01%, rgba(239, 98, 159, 0.5) 100%);
+    position: relative;
+    .container {
+        max-width: 1000px;
+        height: 650px;
+        margin: 0 auto;
+        transform: translateY(calc((100vh - 650px) / 2));
+        background: linear-gradient(110.2deg, #FFFFFF -0.48%, rgba(255, 255, 255, 0) 100%);
+        border: 2px solid #FFFFFF;
+        filter: drop-shadow(5px 2px 8px rgba(0, 0, 0, 0.25));
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .form-wrap {
+            width: 500px;
+            padding-right: 70px;
+            .form-item {
+                display: flex;
+                background: #FFFFFF;
+                align-items: center;
+                gap: 20px;
+                border-radius: 10px;
+                height: 65px;
+                margin: 40px 0px;
+                .item-icon {
+                    height: 47px;
+                    width: 47px;
+                    padding-left: 20px;
+                }
+                input {
+                    height: 47px;
+                    background-color: transparent;
+                    border: 0px;
+                    font-family: Mulish;
+                    width: 70%;
+                    font-size: 22px;
+                    line-height: 28px;
+                    color: #142668;
+                }
+                input::-webkit-input-placeholder {
+                    font-size: 22px;
+                    line-height: 28px;
+                    color: #142668;
+                }
+                input:focus {
+                    outline: none;
+                }
+            }
+            button {
+                width: 100%;
+                border: 4px solid #142668;
+                box-sizing: border-box;
+                box-shadow: 6px 9px 0px 1px rgba(20, 38, 104, 0.7);
+                h3 {
+                    font-weight: bold;
+                    font-size: 25px;
+                    padding: 13px;
+                }
+            }
+            .form-text {
+                text-align: right;
+                padding-top: 30px;
+               a {
+                font-size: 22px;
+                color: grey;
+               }
+               a:hover {
+                   color: #142668;
+               }
+            }
+        }
+    }
+    .login-image {
+        bottom: 138px;
+        left: 70px;
+        position: absolute;
+        width: 900px;
+        height: 700px;
+    }
+}
