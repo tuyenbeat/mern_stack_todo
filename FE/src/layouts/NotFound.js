@@ -1,6 +1,16 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
 export  function NotFound() {
+
+  const navigate = useNavigate();
+
+  useEffect(()=> {
+    toast.warn("Tự động chuyển về trang home sau 3s !")
+    setTimeout(() => {
+      navigate('/', {replace: true})
+    }, 3000);
+  }, [])
   return (
     <div className="notfound-page">
       <div className="page-left">
