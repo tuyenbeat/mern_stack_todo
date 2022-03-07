@@ -6,7 +6,7 @@ export  function NotFound() {
   const navigate = useNavigate();
 
   useEffect(()=> {
-    toast.warn("Tự động chuyển về trang home sau 3s !")
+    toast.warn("Tự động chuyển về trang home !")
     setTimeout(() => {
       navigate('/', {replace: true})
     }, 3000);

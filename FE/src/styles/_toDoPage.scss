@@ -53,30 +53,33 @@
             }
         }
 	}
+    .page-nav {
+        padding-top: 40px;
+        padding-left: 30px;
+        a {
+            font-style: normal;
+            font-weight: 800;
+            font-size: 25px;
+            line-height: 31px;
+            color: #142668;
+            padding: 10px 20px; 
+            transition: border 0.2s linear;
+        }
+    }
     .page-container {
-        padding-top: 60px;
-        max-width: 1740px;
+        padding-top: 20px;
+        max-width: 1750px;
         margin: 0 auto;
-        display: flex;
-        gap: 50px;
         .column-item {
-            width: calc(100% / 3);
-            height: 740px;
+            height: 720px;
             background: linear-gradient(179.12deg, rgba(255, 255, 255, 0.48) -5.85%, rgba(255, 255, 255, 0.08) 104.3%);
             border: 1px solid rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(60px);
             border-radius: 10px;
             box-sizing: border-box;
-            padding: 15px;
-            .column-title {
-                font-family: Rubik Mono One;
-                font-weight: normal;
-                font-size: 26px;
-                line-height: 32px;
-                padding-bottom: 20px;
-            }
+            padding: 25px;
             .container-card{
-                height: calc(100% - 50px);
+                height: calc(100% - 20px);
                 overflow-y: auto;
                .card-item {
                     background: linear-gradient(92.68deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 97.71%);
@@ -90,8 +93,8 @@
                         display: flex;
                         justify-content: space-between;
                         .item-title {
-                            font-weight: normal;
-                            font-size: 22px;
+                            font-weight: 600;
+                            font-size: 25px;
                             line-height: 28px;
                         }
                         .item-icon {
@@ -105,16 +108,15 @@
                     }
                     .item-content {
                         font-weight: normal;
-                        font-size: 15px;
+                        font-size: 18px;
                         line-height: 19px;
                         text-align: justify;
-                        padding: 20px 0px;
+                        padding: 17px 0px;
                     }
                     .item-date {       
                         font-weight: normal;
-                        font-size: 13px;
+                        font-size: 15px;
                         line-height: 16px;
-                        text-align: right;
                     }
                }
             }

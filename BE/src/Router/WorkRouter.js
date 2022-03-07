@@ -5,5 +5,6 @@ const workController = require('../Controller/WorkController');
 
 router.use(authMiddle);
 router.get('/', workController.getList);
+router.post('/', workController.addList);
 
 module.exports = router;
