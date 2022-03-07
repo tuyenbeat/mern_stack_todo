@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {  useDispatch } from 'react-redux';
-import RestAPI from '../api/RestAPI';
+import RestAPI from '../apis/RestAPI';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { addUser } from '../features/Auth/AuthSlice';
@@ -15,6 +15,7 @@ export function LoginPage() {
 		watch,
 		formState: { errors },
 	} = useForm();
+
 	const dispatch = useDispatch();
 	const onSubmit = async (data) => {
 		const value = await RestAPI.post(API_ENDPOINT.login, data);

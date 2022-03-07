@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Card from '../Card';
-import { TodoApi } from '../../api/TodoApi';
+import { TodoApi } from '../../apis/TodoApi';
 export default function CardList() {
 	const param = useParams();
 	const [list, setList] = useState([]);
