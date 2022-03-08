@@ -8,7 +8,6 @@ export default function CardList() {
 	useEffect(() => {
 		const getAPI = async () => {
 			const data = await TodoApi.getList();
-			console.log(param)
              const newData = data.filter((value)=> {
                 if(!param["*"]) return  value
                 return value.type  === param.type

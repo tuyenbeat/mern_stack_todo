@@ -17,5 +17,4 @@ app.use('*', (req, res) => {
 });
 const PORT = process.env.PORT_HOST || 3456;
 app.listen(PORT, () => {
-	console.log('create server');
 });
