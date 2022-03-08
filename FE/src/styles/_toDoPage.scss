@@ -33,6 +33,7 @@
         .header-right {
             display: flex;
             align-items: center;
+            position: relative;
             gap: 20px;
             .header-avatar {
                 height: 60px;
@@ -51,6 +52,36 @@
                     color: #142668;
                 }
             }
+            .header-dropdown {
+                display: none;
+                position: absolute;
+                width: 140px;
+                left: 30px;
+                top: 60px;
+                z-index: 999;
+                background: #F3F3F3;
+                box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+                backdrop-filter: blur(50px);
+                box-sizing: border-box;
+                padding: 10px;
+                button {
+                    height: 50px;
+                    width: 100%;
+                    background: #0029FF;
+                    opacity: 0.4;
+                    border-radius: 10px;
+                    color: #F3F3F3;
+                }
+                button:hover {
+                    cursor: pointer;
+                    background: burlywood;
+                    color: black;
+                }
+            }
+        }
+        .header-right:hover .header-dropdown {
+            height: 170px;
+            display: block;
         }
 	}
     .page-nav {
@@ -63,7 +94,9 @@
             line-height: 31px;
             color: #142668;
             padding: 10px 20px; 
-            transition: border 0.2s linear;
+        }
+        .active {
+            border-bottom: 3px solid #142668;
         }
     }
     .page-container {

@@ -9,7 +9,7 @@ class AuthController {
 			const data = await userModel.findOne({ username });
 			if (!data) throw new Error('username does not exist');
 			const isPassword = await bcrypt.compare(password, data.password);
-			const token = await jwt.sign({ id: data['_id'] }, process.env.ACCESSTOKEN_KEY, { expiresIn: '15m' });
+			const token = await jwt.sign({ id: data['_id'] }, process.env.ACCESSTOKEN_KEY, { expiresIn: '2m' });
 			if (isPassword)
 				return res.json({ message: 'success', data: { accessToken: token, username, email: data.email } });
 			res.json({ message: 'fail' });

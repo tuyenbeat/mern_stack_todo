@@ -18,6 +18,9 @@ RestAPI.interceptors.response.use(function (response) {
     if(response.data.message ==="token expires") {
         localStorage.setItem("accessToken", '')
         toast.error("token đã hết hạn")
+        setTimeout(() => {
+          window.location.assign("/")
+        }, 1000);
     }
     return response.data;
   }, function (error) {

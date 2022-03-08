@@ -1,18 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	Navigate,
-	NavLink,
-	Route,
-	Routes,
-
-} from 'react-router-dom';
+import { Navigate, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import CardList from '../components/CardList';
 export function ToDoPage() {
 	const isLogin = Boolean(localStorage.getItem('accessToken'));
 	const data = useSelector((sate) => sate.auth.user);
+	const navigate = useNavigate();
 
-	
 	if (!isLogin) return <Navigate to="/login" />;
 
 	return (
@@ -47,17 +42,29 @@ export function ToDoPage() {
 						<div className="header-avatar">
 							<img srcSet="/images/avatar.png 2x" alt="" className="image-contain" />
 						</div>
+						<div className="header-dropdown">
+							<button
+								onClick={() => {
+									localStorage.setItem("accessToken", '');
+									localStorage.setItem("user", '');
+									navigate('/');
+									toast.success('Đăng xuất thành công');
+								}}
+							>
+								LogOut
+							</button>
+						</div>
 					</div>
 				</div>
 				<div className="page-nav">
-					<NavLink to='/home/'>AL </NavLink>
-					<NavLink to='todo' >TODO </NavLink>
-					<NavLink to='inprogress' >INPROGRESS </NavLink>
-					<NavLink to='done' >DONE </NavLink>
+					<NavLink to="/home/">AL</NavLink>
+					<NavLink to="todo">TODO</NavLink>
+					<NavLink to="inprogress">INPROGRESS</NavLink>
+					<NavLink to="done">DONE</NavLink>
 				</div>
 				<Routes>
-					<Route path='' element={<CardList/>}/>
-					<Route path=':type' element={<CardList/>}/>
+					<Route path="" element={<CardList />} />
+					<Route path=":type" element={<CardList />} />
 				</Routes>
 			</div>
 		</div>
