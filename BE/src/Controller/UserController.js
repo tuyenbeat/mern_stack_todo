@@ -12,9 +12,9 @@ class userController {
 				await userModel.findOneAndUpdate({ username }, { isActive: true });
 				return res.json({ message: 'auth account success' });
 			}
-			res.status(403).json({ message: 'register user fail' });
+			res.status(204).json({ message: 'auth account fail' });
 		} catch (error) {
-			res.json({ message: error });
+			res.json({ message: "auth account fail" });
 		}
 	}
 	async addUser(req, res, next) {

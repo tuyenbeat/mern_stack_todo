@@ -11,11 +11,11 @@ export default function App() {
 	return (
 		<>
 			<Routes>
-				<Route path="" element={<HomePage />} />
-				<Route path="user" element={<ActivePape />} />
-				<Route path="login" element={<LoginPage />} />
-				<Route path="register" element={<RegisterPage />} />
-				<Route path="home/*" element={<ToDoPage />}>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/user" element={<ActivePape />} />
+				<Route path="/login" element={<LoginPage />} />
+				<Route path="/register" element={<RegisterPage />} />
+				<Route path="/home/*" element={<ToDoPage />}>
 				</Route>
 				<Route path="*" element={<NotFound />} />
 			</Routes>

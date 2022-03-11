@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -7,9 +7,8 @@ export function ToDoPage() {
 	const isLogin = Boolean(localStorage.getItem('accessToken'));
 	const data = useSelector((sate) => sate.auth.user);
 	const navigate = useNavigate();
-
+	const [isShow, setShow] = useState(false)
 	if (!isLogin) return <Navigate to="/login" />;
-
 	return (
 		<div className="todo-page">
 			<div className="page-wrap">
@@ -43,6 +42,8 @@ export function ToDoPage() {
 							<img srcSet="/images/avatar.png 2x" alt="" className="image-contain" />
 						</div>
 						<div className="header-dropdown">
+							<p className='dropdown-title'>{data.username || JSON.parse(localStorage.getItem('user')).username}</p>
+							<p className='dropdown-des'>{data.email || JSON.parse(localStorage.getItem('user')).email}</p>
 							<button
 								onClick={() => {
 									localStorage.setItem("accessToken", '');
@@ -57,10 +58,11 @@ export function ToDoPage() {
 					</div>
 				</div>
 				<div className="page-nav">
-					<NavLink to="/home/">AL</NavLink>
+					<NavLink to="" end>ALL</NavLink>
 					<NavLink to="todo">TODO</NavLink>
 					<NavLink to="inprogress">INPROGRESS</NavLink>
 					<NavLink to="done">DONE</NavLink>
+					<NavLink to="trash">TRASH</NavLink>
 				</div>
 				<Routes>
 					<Route path="" element={<CardList />} />

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {  useDispatch } from 'react-redux';
 import RestAPI from '../apis/RestAPI';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { addUser } from '../features/Auth/AuthSlice';
 import { toast } from 'react-toastify';
 import { API_ENDPOINT } from '../constants';
@@ -18,14 +18,18 @@ export function LoginPage() {
 
 	const dispatch = useDispatch();
 	const onSubmit = async (data) => {
-		const value = await RestAPI.post(API_ENDPOINT.login, data);
-		localStorage.setItem('accessToken', value.data.accessToken);
-    toast.success("Đăng nhập thành công !")
-	localStorage.setItem("user", JSON.stringify(value.data))
-    dispatch(addUser(value.data))
-		setTimeout(() => {
-      navigate('/home');
-    }, 1000);
+		try {
+			const value = await RestAPI.post(API_ENDPOINT.login, data);
+			localStorage.setItem('accessToken', value.data.accessToken);
+			toast.success("Đăng nhập thành công !")
+			localStorage.setItem("user", JSON.stringify(value.data))
+			dispatch(addUser(value.data))
+				setTimeout(() => {
+			navigate('/home');
+			}, 1000);
+		} catch (error) {
+			toast.error("Tài khoản chưa được xác thực !")
+		}
 	};
 	return (
 		<div className="login-page">
@@ -47,7 +51,8 @@ export function LoginPage() {
 						<h3>ĐĂNG NHẬP</h3>
 					</button>
 					<div className="form-text">
-						<a href="/">Quay lại trang chủ</a>
+						<Link to="/">Trang Chủ</Link>
+						<Link to="/register">Đăng Ký</Link>
 					</div>
 				</form>
 			</div>

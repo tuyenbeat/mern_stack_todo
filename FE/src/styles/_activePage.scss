@@ -1,0 +1,17 @@
+.active-page {
+	background: linear-gradient(93.56deg, #9cecfb 2.77%, rgba(101, 199, 247, 0.75) 48.96%, rgba(0, 82, 212, 0.5) 97.12%);
+    height: 100vh;
+    .page-image {
+        height: 600px;
+        width: 700px;
+        margin: 0 auto;
+        padding-top: 70px;
+    }
+    h3 {
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 63px;
+    text-align: center;
+    padding-top: 80px;
+    }
+}

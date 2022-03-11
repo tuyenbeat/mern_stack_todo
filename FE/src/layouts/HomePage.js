@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from "react-router-dom"
 export function HomePage() {
 	return (
 		<div className="page-home">
@@ -29,23 +29,25 @@ export function HomePage() {
 					</ul>
 				</div>
 				<div className="header-right">
-					<a className="text-title" href="/login">
+					<Link className="text-title" to="/login">
 						Login
-					</a>
-					<button>
-						<h3 className="text-button">Register</h3>
-					</button>
+					</Link>
+					<Link className="text-title" to="/register">
+						<button>
+							<h3 className="text-button">Register</h3>
+						</button>
+					</Link>
 				</div>
 			</div>
 			<div className="main-wrap">
 				<div className="main-content">
 					<div className="main-title">ỨNG DỤNG MIỄN PHÍ 100%</div>
 					<div className="main-des">ứng dụng giúp bạn quản lý công việc trở lên đơn giản, hiệu quả hơn.</div>
-					<a href="/home">
+					<Link to="/home">
 						<button className="main-button">
 							<h3>XEM NGAY</h3>
 						</button>
-					</a>
+					</Link>
 				</div>
 				<div className="main-image">
 					<img srcSet="./images/thumb_home.png 2x" alt="" className="image-contain" />

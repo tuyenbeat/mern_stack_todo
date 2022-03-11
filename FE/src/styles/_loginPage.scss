@@ -62,7 +62,8 @@
                 }
             }
             .form-text {
-                text-align: right;
+                display: flex;
+                justify-content: space-between;
                 padding-top: 30px;
                a {
                 font-size: 22px;
@@ -74,11 +75,22 @@
             }
         }
     }
+    .container-register {
+        justify-content: flex-start;
+        .wrap-register {
+            padding-left: 70px;
+        }
+    }
     .login-image {
         bottom: 138px;
         left: 70px;
         position: absolute;
         width: 900px;
         height: 700px;
+    }
+    .register-image {
+        left: unset;
+        right: 20px;
+        bottom: 70px;
     }
 }
